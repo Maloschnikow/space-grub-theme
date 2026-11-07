@@ -1,0 +1,55 @@
+# https://www.gnu.org/software/grub/manual/grub/grub.html#Theme-File-Manual
+
+title-text: ""
+
+desktop-color: "#FFCE45"
+desktop-image: "54678083846_4a2d40ce6f_o.jpg"
+desktop-image-scale-method: "stretch"
+terminal-border: "0"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
++ boot_menu {
+    menu_pixmap_style = "menu_*.png"
+    left = 32
+    top = 32
+    width = 20%
+    height = 144
+    item_color = "#dcdcdc"
+    selected_item_color = "#192d67"
+    selected_item_font = "Hack Bold 14"
+    selected_item_pixmap_style = "select_*.png"
+    item_font = "Hack Regular 14"
+    item_spacing = 8
+    item_height = 16
+    icon_width = 16
+    icon_height = 16
+    item_icon_space = 8
+    item_padding = 0
+    
+    #scrollbar_frame = "scrollbar_frame_*.png"
+    scrollbar_thumb = "scrollbar_thumb_*.png"
+    scrollbar_slice = "west"
+}
+
++ label {
+    height = 16
+    width = 20%
+    left = 32
+    top = 176
+
+    font = "Hack Regular 12"
+    align = "left"
+    id = "__timeout__"
+    text = "Booting in %ds"
+    color = "#dcdcdc"
+}
+
++ label {
+    left = 32
+    text = "Boot: <enter> - Options: <e> - Shell: <c>"
+    color = "#dcdcdc"
+    font = "Hack Regular 12"
+}

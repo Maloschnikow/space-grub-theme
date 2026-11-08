@@ -6,10 +6,7 @@ A sleek space theme for grub.
 
 - Background image: [NASA](https://www.flickr.com/photos/nasacommons/54678083846/)
 - Font: [Hack](https://github.com/source-foundry/hack)
-- Icons:
-  - [NixOS](https://brand.nixos.org/logos/nixos-logomark-rainbow-flat-recommended.svg)
-  - [UEFI](https://upload.wikimedia.org/wikipedia/commons/8/89/Logo_of_the_UEFI_Forum.svg)
-  - [Windows](https://upload.wikimedia.org/wikipedia/commons/0/0a/Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg)
+- Icons: look [here](icons.toml)
 
 ## Development
 Preview with:
@@ -26,7 +23,8 @@ grub-mkfont -o Hack-14.pf2 -s 14 ttf/Hack-Regular.ttf
 
 Convert `.svg` to `.png` with [ImageMagick](https://github.com/imagemagick/imagemagick):
 ```shell
-magick -background none 'https://brand.nixos.org/logos/nixos-logomark-rainbow-flat-recommended.svg' -trim -resize 16x16 -gravity center -extent 16x16 icons/nixos.png
+# mkicon is a custom script, look into nix/scripts.nix for details
+mkicon https://brand.nixos.org/logos/nixos-logomark-rainbow-flat-recommended.svg nixos
+# Regenerate all icons
+mk-all-icons
 ```
-- `-resize 16x16` preserves aspect ratio. So a 64x32 image will be 16x8.
-- `-gravity center -extent 16x16` will add whitespace to pad to 16x16.

@@ -19,6 +19,7 @@
       pkgs = import nixpkgs {
         inherit system overlays;
       };
+      shellScripts = import ./nix/scripts.nix { inherit pkgs; };
 
     in {
       devShells.default = pkgs.mkShell {
@@ -30,7 +31,8 @@
             OVMF
             uv
             imagemagick
-          ];
+          ]
+          ++ shellScripts;
         shellHook = ''
           export G2TP_GRUB_LIB="${pkgs.grub2_efi}/lib/grub"
           export G2TP_OVMF_IMAGE="${pkgs.OVMF.firmware}"

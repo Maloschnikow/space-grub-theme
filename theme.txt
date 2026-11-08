@@ -4,7 +4,7 @@ title-text: ""
 
 desktop-color: "#FFCE45"
 desktop-image: "54678083846_4a2d40ce6f_o.jpg"
-desktop-image-scale-method: "stretch"
+desktop-image-scale-method: "crop"
 terminal-border: "0"
 terminal-left: "0"
 terminal-top: "0"

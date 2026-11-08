@@ -8,11 +8,31 @@ A sleek space theme for grub.
 - Font: [Hack](https://github.com/source-foundry/hack)
 - Icons: look [here](icons.toml)
 
-## Development
-Preview with:
-```shell
-nix develop # open nix shell
+## Install
+### NixOS
+Add this to the `inputs` in your configuration `flake.nix`
+```nix
+space-grub-theme.url = "github:Maloschnikow/space-grub-theme";
+```
+And in your configuration set
+```nix
+boot.loader.grub.theme = "${inputs.space-grub-theme}";
+```
 
+### Other Distros
+Sorry, I can't help you with this.
+Downloading the contents of this repo should be a good first step. I'm sure you can figure out the rest too, I believe in you!
+
+
+## Development
+
+Open a development shell with
+```shell
+nix develop
+```
+
+Preview with [grub2-theme-preview](https://github.com/hartwork/grub2-theme-preview):
+```shell
 uv tool run --from grub2-theme-preview grub2-theme-preview ./. --verbose --resolution 1920x1080
 ```
 

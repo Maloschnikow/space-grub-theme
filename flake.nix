@@ -29,6 +29,7 @@
             xorriso
             OVMF
             uv
+            imagemagick
           ];
         shellHook = ''
           export G2TP_GRUB_LIB="${pkgs.grub2_efi}/lib/grub"

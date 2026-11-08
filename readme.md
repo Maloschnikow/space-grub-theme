@@ -6,16 +6,25 @@ A sleek space theme for grub.
 
 - Background image: [NASA](https://www.flickr.com/photos/nasacommons/54678083846/)
 - Font: [Hack](https://github.com/source-foundry/hack)
+- Icons:
+  - [NixOS](https://brand.nixos.org/logos/nixos-logomark-rainbow-flat-recommended.svg)
+  - [UEFI](https://upload.wikimedia.org/wikipedia/commons/8/89/Logo_of_the_UEFI_Forum.svg)
+  - [Windows](https://upload.wikimedia.org/wikipedia/commons/0/0a/Unofficial_Windows_logo_variant_-_2002%E2%80%932012_%28Multicolored%29.svg)
 
 ## Development
-Preview with
+Preview with:
 ```shell
 nix develop # open nix shell
 
 uv tool run --from grub2-theme-preview grub2-theme-preview ./. --verbose --resolution 1920x1080
 ```
 
-Convert `.ttf` to `.pf2` with
+Convert `.ttf` to `.pf2` with:
 ```shell
 grub-mkfont -o Hack-14.pf2 -s 14 ttf/Hack-Regular.ttf
+```
+
+Convert `.svg` to `.png` with [ImageMagick](https://github.com/imagemagick/imagemagick):
+```shell
+magick -background none 'https://brand.nixos.org/logos/nixos-logomark-rainbow-flat-recommended.svg' -trim -resize 16 icons/nixos.png
 ```

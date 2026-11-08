@@ -16,7 +16,7 @@ space-grub-theme.url = "github:Maloschnikow/space-grub-theme";
 ```
 And in your configuration set
 ```nix
-boot.loader.grub.theme = "${inputs.space-grub-theme}";
+boot.loader.grub.theme = "${inputs.space-grub-theme.packages.${pkgs.stdenv.hostPlatform.system}.default}";
 ```
 
 ### Other Distros

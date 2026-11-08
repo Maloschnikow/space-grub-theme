@@ -24,7 +24,7 @@
         -gravity center \
         -extent 64x64 \
         -depth 8 \
-        icons/$2.png
+        theme/icons/$2.png
     '')
     # `-resize 64x64` preserves aspect ratio. So a 512x256 image will be 64x32
     # `extent 64x64` will add whitespace to pad to 64x64.

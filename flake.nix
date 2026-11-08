@@ -46,7 +46,8 @@
 
         installPhase = ''
           mkdir -p $out
-          cp -r * $out
+          cp -r theme/* $out/
+          cp LICENSE $out/
         '';
       };
     }
